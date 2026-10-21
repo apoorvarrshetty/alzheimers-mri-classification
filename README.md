@@ -33,7 +33,23 @@ The data were split by subject identifier, rather than image slice: training 241
 | Macro-F1 | 0.3454 | 0.6131 |
 | Balanced accuracy | 40.28% | 70.28% |
 
-ResNet18 recall on validation subjects was 0.78 Non Demented (40 subjects), 0.67 Very mild Dementia (9 subjects), and 0.67 Mild Dementia (only 3 subjects). These are **preliminary validation metrics**, not independent test or external clinical validation. The untouched test-set performance has not yet been reported. Numerous MRI slices from each subject are strongly correlated; counting them as independent patients would mislead.
+ResNet18 recall on validation subjects was 0.78 Non Demented (40 subjects), 0.67 Very mild Dementia (9 subjects), and 0.67 Mild Dementia (only 3 subjects). These are **preliminary validation metrics**, not independent test or external clinical validation. The subject-disjoint held-out test set was evaluated once after model selection. Numerous MRI slices from each subject are strongly correlated; counting them as independent patients would mislead.
+
+### Final held-out test (52 subjects / 12,810 MRI slices)
+
+| Metric | ResNet18 |
+| --- | ---: |
+| Subject-level accuracy | 73.08% (38/52) |
+| Subject-level macro-F1 | 0.5965 |
+| Subject-level balanced accuracy | 69.44% |
+
+| Category | Precision | Recall | F1 | Test subjects |
+| --- | ---: | ---: | ---: | ---: |
+| Non Demented | 0.97 | 0.75 | 0.85 | 40 |
+| Very mild Dementia | 0.40 | 0.67 | 0.50 | 9 |
+| Mild Dementia | 0.33 | 0.67 | 0.44 | 3 |
+
+These held-out results used the **original FP32 training checkpoint**. The deployed web app uses an FP16-compressed copy, whose full test-set prediction agreement has not yet been measured. This is internal, single-dataset validation and should **not** be interpreted as clinical diagnostic performance.
 
 ## Run locally
 
@@ -63,7 +79,7 @@ Grad-CAM overlays show which image regions contributed to the **predicted class*
 
 ## Remaining validation
 
-Before scientific performance claims: run the final subject-disjoint test evaluation once, check duplicate and near-duplicate MRI slices, examine failure cases and artifact reliance, report uncertainty with limited dementia-category subject counts, and seek an independent external dataset if available.
+Check duplicate and near-duplicate MRI slices, audit attribution artifacts and incorrect predictions, quantify uncertainty for small classes, compare the deployed FP16 model against the original checkpoint on the locked test subjects without further tuning, and pursue independent external validation.
 
 ## License
 
