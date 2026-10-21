@@ -1,8 +1,10 @@
-# SYNAPSERA NeuroMemory 🧠
+# Alzheimer’s MRI Classification 🧠
+
+An independent research and educational project, separate from the Synapsera collection.
 
 ## 🌐 Live application
 
-**[🚀 Open SYNAPSERA NeuroMemory](https://synapsera-neuromemory-b9rojpoquhthbc3aajwihf.streamlit.app/)**
+**[🚀 Open Alzheimer’s MRI Classification](https://synapsera-neuromemory-b9rojpoquhthbc3aajwihf.streamlit.app/)**
 
 Explore the deployed research prototype by uploading a de-identified, dataset-like MRI slice. For education and research only; not for clinical diagnosis.
 
