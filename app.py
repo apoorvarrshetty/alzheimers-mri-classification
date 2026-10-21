@@ -22,9 +22,13 @@ with st.expander("About the research", expanded=False):
     **Three OASIS-derived dataset labels:** Non Demented, Very mild Dementia, Mild Dementia.
     Moderate Dementia was excluded because the dataset contained only two identified subjects in that class.
 
-    **Preliminary validation:** 52 held-out subjects; subject-level accuracy 75%, macro-F1 0.613,
-    balanced accuracy 70.28%. Only 3 Mild Dementia subjects were in validation, and an untouched
-    test-set result has not yet been reported. Results are not clinical validation.
+    **Validation:** 52 subjects; subject-level accuracy 75%, macro-F1 0.613,
+    balanced accuracy 70.28%.
+
+    **Held-out test (original FP32 checkpoint):** 52 subjects; subject-level accuracy 73.08%,
+    macro-F1 0.5965, balanced accuracy 69.44%. Only 3 Mild Dementia subjects were in the
+    test set. The deployed FP16 checkpoint has not yet been separately benchmarked on
+    the full test set. These are internal research results, not clinical validation.
 
     **Image format:** Single sagittal MRI slices like those in the training dataset (JPG/PNG).
     Other scans, orientations, scanners, and patient populations are out of distribution.
