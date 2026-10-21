@@ -1,4 +1,4 @@
-"""SYNAPSERA NeuroMemory — educational MRI classification prototype."""
+"""Alzheimer’s MRI Classification — educational MRI classification prototype."""
 from pathlib import Path
 import numpy as np
 import streamlit as st
@@ -6,14 +6,14 @@ import torch
 from PIL import Image, UnidentifiedImageError
 from model import CLASS_NAMES, image_transform, load_model
 
-st.set_page_config(page_title="SYNAPSERA NeuroMemory", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="Alzheimer’s MRI Classification", page_icon="🧠", layout="wide")
 MODEL_PATH = Path(__file__).parent / "neuromemory_resnet18_fp16.pth"
 
 @st.cache_resource(show_spinner="Loading research model...")
 def get_model(path):
     return load_model(path, device="cpu")
 
-st.title("🧠 SYNAPSERA NeuroMemory")
+st.title("🧠 Alzheimer’s MRI Classification")
 st.caption("Explainable MRI slice classification · Research prototype · Not a diagnostic device")
 st.warning("For research and education only. The model cannot diagnose Alzheimer's disease. Do not upload identifiable patient data or use predictions to make medical decisions.")
 
