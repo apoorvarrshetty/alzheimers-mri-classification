@@ -1,5 +1,12 @@
 # SYNAPSERA NeuroMemory 🧠
 
+## 🌐 Live application
+
+**[🚀 Open SYNAPSERA NeuroMemory](https://synapsera-neuromemory-b9rojpoquhthbc3aajwihf.streamlit.app/)**
+
+Explore the deployed research prototype by uploading a de-identified, dataset-like MRI slice. For education and research only; not for clinical diagnosis.
+
+
 An explainable **research and educational prototype** for three-category classification of 2D brain MRI slices with PyTorch, ResNet18, Streamlit, and Grad-CAM.
 
 > **Not a medical device.** Predictions are research outputs, not an Alzheimer's diagnosis, medical advice, or calibrated risk estimates. Do not use the app for clinical decisions or upload identifiable patient information.
