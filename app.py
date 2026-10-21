@@ -7,7 +7,7 @@ from PIL import Image, UnidentifiedImageError
 from model import CLASS_NAMES, image_transform, load_model
 
 st.set_page_config(page_title="SYNAPSERA NeuroMemory", page_icon="🧠", layout="wide")
-MODEL_PATH = Path(__file__).parent / "models" / "neuromemory_resnet18_best.pth"
+MODEL_PATH = Path(__file__).parent / "neuromemory_resnet18_fp16.pth"
 
 @st.cache_resource(show_spinner="Loading research model...")
 def get_model(path):
@@ -31,7 +31,7 @@ with st.expander("About the research", expanded=False):
     The app cannot reliably detect that an uploaded image is unsuitable.
     """)
 if not MODEL_PATH.is_file():
-    st.error("Model weights are missing. Add models/neuromemory_resnet18_best.pth to run predictions.")
+    st.error("Model weights are missing. Add neuromemory_resnet18_fp16.pth to the repository root to run predictions.")
     st.stop()
 
 try:
